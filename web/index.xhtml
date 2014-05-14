@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>
+                <p:panelGrid columns="2">
+                    <f:facet name="header">
+                        index
+                    </f:facet>
+                    <br/>
+                    <p:commandLink action="view/docente/newxhtml"
+                                   value="Mostrar todos os xhtml"/>
+                    <br/>
+                    <p:commandLink action="view/docente/Create"
+                                   value="Mostrar todos os Docentes"/>
+                    <br/>
+                    <p:commandLink action ="view/disciplina/List"
+                                   value ="Mostras todas as Disciplinas"/>          
+                    <br />
+                    <p:commandLink action="/view/turma/List"
+                                   value="Mostrar todas as Turmas"/>
+                </p:panelGrid>
+
+                <p:commandButton value="salvar sei la"
+                                 actionListener="#{docenteController.create()}" ajax="false"/>
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+

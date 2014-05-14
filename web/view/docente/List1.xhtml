@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Lista Docentes</title>
+    </h:head>
+    <h:body>
+
+        <h:form>
+            <h:dataTable value="#{docenteController.items}" var="item" border="0"
+                         cellpadding="2" cellspacing="0"
+                         rules="all" style="border:solid 1px">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Nome"/>
+                    </f:facet>
+                    <h:outputText value="#{item.nome}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Id"/>
+                    </f:facet>
+                    <h:outputText value="#{item.id}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="&nbsp;"/>
+                    </f:facet>
+                    <h:commandLink action="#{docenteController.prepareView}"
+                                   value="Visualizar"/>
+                    <h:outputText value=" "/>
+                    <h:commandLink action="#{docenteController.destroy}"
+                                   value="Apagar"/>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>

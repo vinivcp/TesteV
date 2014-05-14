@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <ui:composition template="/template.xhtml">
+    
+        <ui:define name="title">
+            <h:outputText value="Visualizar Dados da Disciplina"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color:red" infoStyle="color:green"
+                            layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="Nome" for="nome"/>
+                    <h:inputText id="nome" value="#{disciplinaController.selected.nome}"
+                                 title="Nome"/>
+                </h:panelGrid>
+                
+                <br/>
+                
+                <h:commandLink action="#{disciplinaController.destroyAndView()}"
+                               value="Apagar"/>
+                <br/>
+                <br/>
+                <h:link outcome="Edit" value="Edit"/>
+                <br/>
+                <br/>
+                <h:commandLink action="#{disciplinaController.prepareCreate()}"
+                               value ="Visualizar"/>
+                <br/>
+                <br/>
+                
+                <h:commandLink action="#{disciplinaController.prepareList()}
+                               " value="Mostrar todas as disciplinas"/>
+                <br/>;
+                <br/>
+                <h:link outcome="/index" value="index"/>
+            </h:form>
+        </ui:define>
+        
+    </ui:composition>
+    
+</html>
